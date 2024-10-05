@@ -1,1 +1,1 @@
-# 5-Step-Prediction-USDCHF-LSTM
+# Forecasting USDCHF in Forex with LSTM
