@@ -62,5 +62,6 @@ Prediction and Visualization: The trained model is used to predict the future pr
 
 <img alt="Static Badge" src="https://img.shields.io/badge/AgungHari-black?style=social&logo=github&link=https%3A%2F%2Fgithub.com%2FAgungHari">
 
+<img alt="Static Badge" src="https://img.shields.io/badge/AbelMarcel-black?style=social&logo=github&link=https://github.com/AbelMarcelR">
 
 
