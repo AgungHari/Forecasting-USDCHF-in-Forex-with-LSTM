@@ -1,10 +1,10 @@
 from keras.models import load_model
 import numpy as np
-from sklearn.preprocessing import MinMaxScaler
+import joblib  # untuk memuat scaler yang sudah disimpan
 
 # Fungsi untuk memuat model dan melakukan prediksi
 def predict_stock_price(model_path, new_data):
-
+    # Memuat scaler yang sudah di-fit saat training
     scaler = joblib.load('scaler_ta_abel1.save')
 
     # Memuat model yang sudah disimpan
@@ -15,11 +15,10 @@ def predict_stock_price(model_path, new_data):
     # Misalkan data yang kamu masukkan dalam format list
     data_new = np.array(new_data).reshape(-1, 1)
     
-    # Normalisasi data baru (fit di sini hanya contoh, seharusnya disesuaikan dengan scaler yang sama saat training)
-    scaler = MinMaxScaler(feature_range=(0, 1))
+    # Normalisasi data baru menggunakan scaler yang sudah di-fit pada training
     data_new_scaled = scaler.transform(data_new)
     
-    # Membentuk input yang sesuai untuk model LSTM
+    # Membentuk input yang sesuai untuk model LSTM (1 sample, timesteps, 1 feature)
     X_input = data_new_scaled.reshape(1, data_new_scaled.shape[0], 1)
     
     # Melakukan prediksi
